@@ -65,7 +65,6 @@ if __name__ == "__main__":
         pos = start
         
         if expr[pos] == '(':
-            # Найдем закрывающую скобку
             balance = 1
             end = pos + 1
             while end < len(expr) and balance > 0:
@@ -80,7 +79,6 @@ if __name__ == "__main__":
             self.journal.append(f"{call_id}: выражение в скобках = {result}")
             return result, end
         
-        # Чтение числа
         num_str = ""
         while pos < len(expr) and expr[pos].isdigit():
             num_str += expr[pos]
@@ -90,8 +88,6 @@ if __name__ == "__main__":
         self.journal.append(f"{call_id}: число = {result}")
         return result, pos
 
-
-# Демонстрация
 if __name__ == "__main__":
     calc = SimpleExpressionCalculator()
     
